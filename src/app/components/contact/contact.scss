@@ -1,0 +1,127 @@
+.contact {
+  padding: 6rem 0;
+  background-color: #f9f9f9;
+
+  &__inner {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  &__header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  &__heading {
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin: 0 0 0.75rem 0;
+  }
+
+  &__subheading {
+    font-size: 1rem;
+    color: #666666;
+    margin: 0;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+
+    &--checkbox {
+      margin-top: 0.5rem;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color 100ms ease;
+    background-color: #ffffff;
+
+    &:focus {
+      border-color: #000000;
+    }
+
+    &--textarea {
+      resize: vertical;
+      min-height: 140px;
+    }
+
+    &--error {
+      border-color: #e53935;
+    }
+  }
+
+  &__error-wrapper {
+    min-height: 1.5rem;
+    padding: 0.2rem 0;
+  }
+
+  &__error {
+    font-size: 0.8rem;
+    color: #e53935;
+  }
+
+  &__checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: #444444;
+    line-height: 1.5;
+  }
+
+  &__checkbox {
+    margin-top: 0.2rem;
+    flex-shrink: 0;
+    cursor: pointer;
+    accent-color: #000000;
+  }
+
+  &__submit {
+    margin-top: 0.5rem;
+    padding: 0.875rem;
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 100ms ease;
+
+    &:hover:not(:disabled) {
+      background-color: #333333;
+    }
+
+    &:disabled {
+      background-color: #cccccc;
+      cursor: not-allowed;
+    }
+  }
+
+  &__success {
+    text-align: center;
+    padding: 2rem;
+    background-color: #e6f4ea;
+    border-radius: 12px;
+    color: #2e7d32;
+    font-size: 1.1rem;
+    font-weight: 500;
+  }
+}

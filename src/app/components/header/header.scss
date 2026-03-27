@@ -1,0 +1,50 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e5e5e5;
+  &__inner {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__logo {
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: #000000;
+  }
+  &__nav {
+    display: flex;
+    gap: 5rem;
+  }
+  &__nav-link {
+    text-decoration: none;
+    color: #333333;
+    font-size: 0.95rem;
+    transition: color 100ms ease;
+    cursor: pointer;
+    &:hover {
+      color: #000000;
+    }
+  }
+  &__lang-btn {
+    border: 1px solid #333333;
+    background: transparent;
+    padding: 0.4rem 1rem;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 100ms ease, color 100ms ease;
+    &:hover {
+      background-color: #000000;
+      color: #ffffff;
+    }
+  }
+}

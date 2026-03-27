@@ -1,0 +1,93 @@
+<section class="contact" id="contact">
+  <div class="contact__inner">
+
+    <div class="contact__header">
+      <h2 class="contact__heading">{{ content().heading }}</h2>
+      <p class="contact__subheading">{{ content().subheading }}</p>
+    </div>
+
+    @if (submitted()) {
+      <div class="contact__success">
+        {{ content().successMessage }}
+      </div>
+    } @else {
+      <form class="contact__form" [formGroup]="form" (ngSubmit)="sendMessage()">
+
+        <div class="contact__field">
+          <input
+            class="contact__input"
+            [class.contact__input--error]="nameControl.invalid && nameControl.touched"
+            type="text"
+            formControlName="name"
+            [placeholder]="content().namePlaceholder"
+          />
+          <div class="contact__error-wrapper">
+            @if (nameControl.invalid && nameControl.touched) {
+              <span class="contact__error">{{ content().nameRequired }}</span>
+            }
+          </div>
+        </div>
+
+        <div class="contact__field">
+          <input
+            class="contact__input"
+            [class.contact__input--error]="emailControl.invalid && emailControl.touched"
+            type="email"
+            formControlName="email"
+            [placeholder]="content().emailPlaceholder"
+          />
+          <div class="contact__error-wrapper">
+            @if (emailControl.touched) {
+              @if (emailControl.hasError('required')) {
+                <span class="contact__error">{{ content().emailRequired }}</span>
+              } @else if (emailControl.hasError('email')) {
+                <span class="contact__error">{{ content().emailInvalid }}</span>
+              }
+            }
+          </div>
+        </div>
+
+        <div class="contact__field">
+          <textarea
+            class="contact__input contact__input--textarea"
+            [class.contact__input--error]="messageControl.invalid && messageControl.touched"
+            formControlName="message"
+            [placeholder]="content().messagePlaceholder"
+            rows="5"
+          ></textarea>
+          <div class="contact__error-wrapper">
+            @if (messageControl.invalid && messageControl.touched) {
+              <span class="contact__error">{{ content().messageRequired }}</span>
+            }
+          </div>
+        </div>
+
+        <div class="contact__field contact__field--checkbox">
+          <label class="contact__checkbox-label">
+            <input
+              class="contact__checkbox"
+              type="checkbox"
+              formControlName="privacy"
+            />
+            <span>{{ content().privacy }}</span>
+          </label>
+          <div class="contact__error-wrapper">
+            @if (privacyControl.invalid && privacyControl.touched) {
+              <span class="contact__error">{{ content().privacyRequired }}</span>
+            }
+          </div>
+        </div>
+
+        <button
+          class="contact__submit"
+          type="submit"
+          [disabled]="form.invalid"
+        >
+          {{ content().submit }}
+        </button>
+
+      </form>
+    }
+
+  </div>
+</section>

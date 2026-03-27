@@ -29,6 +29,14 @@ yarn-error.log
 !.vscode/mcp.json
 .history/*
 
+# Environment (do not commit API keys or secrets)
+.env
+.env.*
+!.env.example
+
+# Local overrides
+*.local
+
 # Miscellaneous
 /.angular/cache
 .sass-cache/

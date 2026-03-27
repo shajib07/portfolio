@@ -1,0 +1,64 @@
+<section class="projects">
+  <div class="projects__inner">
+
+    <div class="projects__header">
+      <h2 class="projects__heading">{{ content().heading }}</h2>
+      <p class="projects__subheading">{{ content().subheading }}</p>
+    </div>
+
+    <div class="projects__grid">
+      @for (project of projects; track project.title) {
+        <div class="projects__card">
+
+          <div class="projects__image-wrapper">
+            <img
+              class="projects__image"
+              [src]="project.image"
+              [alt]="project.title"
+            />
+          </div>
+
+          <div class="projects__body">
+            <h3 class="projects__title">{{ project.title }}</h3>
+
+            <p class="projects__description">
+              {{ language() === 'en' ? project.descriptionEn : project.descriptionDe }}
+            </p>
+
+            <div class="projects__techs">
+              @for (tech of project.technologies; track tech) {
+                <span class="projects__tech">{{ tech }}</span>
+              }
+            </div>
+
+            <div class="projects__links">
+              @if (project.liveUrl) {
+                <a
+                  class="projects__link projects__link--live"
+                  [href]="project.liveUrl"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {{ content().live }}
+                </a>
+              }
+
+              @if (project.githubUrl) {
+                <a
+                  class="projects__link projects__link--code"
+                  [href]="project.githubUrl"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {{ content().code }}
+                </a>
+              }
+            </div>
+          </div>
+
+        </div>
+      }
+    </div>
+
+  </div>
+</section>
