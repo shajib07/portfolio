@@ -1,5 +1,6 @@
 import { Component, computed, inject } from '@angular/core';
 import { LanguageService } from '../../services/language';
+import { FadeInDirective } from '../../directives/fade-in';
 
 interface AboutContent {
   heading: string,
@@ -28,7 +29,7 @@ const aboutContent: Record<'en' | 'de', AboutContent> = {
 
 @Component({
   selector: 'app-about',
-  imports: [],
+  imports: [FadeInDirective],
   templateUrl: './about.html',
   styleUrl: './about.scss',
 })

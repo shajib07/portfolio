@@ -1,1 +1,14 @@
-<p>footer works!</p>
+<footer class="footer">
+  <div class="footer__inner">
+
+    <p class="footer__copy">
+      &copy; {{ year }} Atahar Hossain. {{ content().rights }}
+    </p>
+
+    <nav class="footer__nav">
+      <a routerLink="/imprint" class="footer__link">{{ content().imprint }}</a>
+      <a routerLink="/privacy" class="footer__link">{{ content().privacy }}</a>
+    </nav>
+
+  </div>
+</footer>

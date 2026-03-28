@@ -1,0 +1,53 @@
+.legal {
+  min-height: 100vh;
+  padding: 4rem 0;
+
+  &__inner {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  &__title {
+    font-size: 2.5rem;
+    font-weight: 700;
+  }
+
+  &__section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+
+    h2 {
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+
+    p {
+      color: #555555;
+      line-height: 1.7;
+    }
+  }
+
+  &__back {
+    display: inline-block;
+    color: #000000;
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 100ms ease;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+
+  @media (max-width: 768px) {
+    &__inner {
+      padding: 0 1rem;
+    }
+  }
+}

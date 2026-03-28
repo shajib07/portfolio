@@ -136,4 +136,14 @@
       }
     }
   }
+
+  @media (max-width: 768px) {
+    &__inner {
+      padding: 0 1rem;
+    }
+
+    &__grid {
+      grid-template-columns: 1fr;
+    }
+  }
 }

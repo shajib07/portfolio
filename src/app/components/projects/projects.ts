@@ -1,5 +1,6 @@
 import { Component, computed, inject } from '@angular/core';
 import { LanguageService } from '../../services/language';
+import { FadeInDirective } from '../../directives/fade-in';
 
 interface Project {
   title: string;
@@ -49,7 +50,7 @@ const projectsContent: Record<'en' | 'de', { heading: string; subheading: string
 
 @Component({
   selector: 'app-projects',
-  imports: [],
+  imports: [FadeInDirective],
   templateUrl: './projects.html',
   styleUrl: './projects.scss'
 })

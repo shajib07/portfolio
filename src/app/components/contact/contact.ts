@@ -1,6 +1,7 @@
 import { Component, computed, inject, signal } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { LanguageService } from '../../services/language';
+import { FadeInDirective } from '../../directives/fade-in';
 
 type Lang = 'en' | 'de';
 
@@ -55,7 +56,7 @@ const contactContent: Record<Lang, ContactContent> = {
 
 @Component({
   selector: 'app-contact',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, FadeInDirective],
   templateUrl: './contact.html',
   styleUrl: './contact.scss'
 })

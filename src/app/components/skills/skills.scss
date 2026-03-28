@@ -60,4 +60,14 @@
     font-weight: 600;
     color: #333333;
   }
+  
+  @media (max-width: 768px) {
+    &__inner {
+      padding: 0 1rem;
+    }
+
+    &__grid {
+      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    }
+  }
 }

@@ -4,6 +4,7 @@
   z-index: 100;
   background-color: #ffffff;
   border-bottom: 1px solid #e5e5e5;
+
   &__inner {
     max-width: 1440px;
     margin: 0 auto;
@@ -13,26 +14,37 @@
     align-items: center;
     justify-content: space-between;
   }
+
   &__logo {
     font-size: 1.25rem;
     font-weight: 700;
     text-decoration: none;
     color: #000000;
   }
+
   &__nav {
     display: flex;
-    gap: 5rem;
+    gap: 2rem;
   }
+
   &__nav-link {
     text-decoration: none;
     color: #333333;
     font-size: 0.95rem;
     transition: color 100ms ease;
     cursor: pointer;
+
     &:hover {
       color: #000000;
     }
   }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
   &__lang-btn {
     border: 1px solid #333333;
     background: transparent;
@@ -42,9 +54,66 @@
     font-weight: 600;
     cursor: pointer;
     transition: background-color 100ms ease, color 100ms ease;
+
     &:hover {
       background-color: #000000;
       color: #ffffff;
+    }
+  }
+
+  &__burger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 32px;
+    height: 32px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+  }
+
+  &__burger-line {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #000000;
+    border-radius: 2px;
+    transition: transform 100ms ease, opacity 100ms ease;
+
+    &--open {
+      &:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+      &:nth-child(2) { opacity: 0; }
+      &:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    }
+  }
+
+  @media (max-width: 768px) {
+    &__inner {
+      padding: 0 1rem;
+    }
+
+    &__burger {
+      display: flex;
+    }
+
+    &__nav {
+      display: none;
+      position: absolute;
+      top: 70px;
+      left: 0;
+      right: 0;
+      background-color: #ffffff;
+      border-bottom: 1px solid #e5e5e5;
+      flex-direction: column;
+      padding: 1.5rem;
+      gap: 1.5rem;
+      z-index: 99;
+
+      &--open {
+        display: flex;
+      }
     }
   }
 }

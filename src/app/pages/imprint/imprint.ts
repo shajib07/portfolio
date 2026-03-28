@@ -7,6 +7,6 @@ import { FooterComponent } from '../../components/footer/footer';
   selector: 'app-imprint',
   imports: [RouterLink, HeaderComponent, FooterComponent],
   templateUrl: './imprint.html',
-  styleUrl: './imprint.scss',
+  styleUrl: './imprint.scss'
 })
 export class ImprintComponent {}

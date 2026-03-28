@@ -1,5 +1,6 @@
 import { Component, computed, inject } from '@angular/core';
 import { LanguageService } from '../../services/language';
+import { FadeInDirective } from '../../directives/fade-in';
 
 interface Skill {
   name: string;
@@ -28,7 +29,7 @@ const skillsContent: Record<'en' | 'de', { heading: string; subheading: string }
 
 @Component({
   selector: 'app-skills',
-  imports: [],
+  imports: [FadeInDirective],
   templateUrl: './skills.html',
   styleUrl: './skills.scss',
 })
