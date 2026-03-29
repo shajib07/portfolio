@@ -8,7 +8,7 @@
     <div class="skills__list">
       @for (category of categories; track category.labelEn) {
         <div class="skills__row">
-          <div class="skills__category" [style.background-color]="category.color">
+          <div class="skills__category" [style.--category-accent]="category.color">
             <span class="skills__category-icon">{{ category.icon }}</span>
             <span class="skills__category-label">
               {{ language() === 'en' ? category.labelEn : category.labelDe }}
