@@ -1,12 +1,7 @@
 <section class="about" appFadeIn>
   <div class="about__inner">
-
     <div class="about__image-wrapper">
-      <img
-        class="about__image"
-        src="img/about.jpg"
-        alt="Atahar Hossain"
-      />
+      <img class="about__image" src="img/about.jpg" alt="Atahar Hossain" />
     </div>
 
     <div class="about__text">
@@ -18,7 +13,22 @@
         <span class="about__tag">{{ content().location }}</span>
         <span class="about__tag about__tag--available">{{ content().available }}</span>
       </div>
-    </div>
 
+      <div class="about__services">
+        <h3 class="about__services-heading">{{ content().serviceHeading }}</h3>
+
+        <div class="about__services-grid">
+          @for (service of content().services; track service.title) {
+            <div class="about__services-card">
+              <div class="about__services-icon">
+                <img [src]="service.icon" [alt]="service.title" />
+              </div>
+              <h4 class="about__services-title">{{ service.title }}</h4>
+              <p class="about__services-text">{{ service.description }}</p>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
   </div>
 </section>
