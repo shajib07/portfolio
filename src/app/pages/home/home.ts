@@ -6,6 +6,7 @@ import { SkillsComponent } from '../../components/skills/skills';
 import { ProjectsComponent } from '../../components/projects/projects';
 import { ContactComponent } from '../../components/contact/contact';
 import { FooterComponent } from '../../components/footer/footer';
+import { ExperienceComponent } from '../../components/experience/experience';
 
 @Component({
   selector: 'app-home',
@@ -15,6 +16,7 @@ import { FooterComponent } from '../../components/footer/footer';
     AboutComponent,
     SkillsComponent,
     ProjectsComponent,
+    ExperienceComponent,
     ContactComponent,
     FooterComponent,
   ],

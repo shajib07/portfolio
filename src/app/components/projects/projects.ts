@@ -1,6 +1,7 @@
 import { Component, computed, inject, signal } from '@angular/core';
 import { LanguageService } from '../../services/language';
 import { FadeInDirective } from '../../directives/fade-in';
+import { TitleCasePipe } from '@angular/common';
 
 type ProjectCategory = 'fullstack' | 'flutter' | 'android';
 
@@ -38,7 +39,7 @@ const projects: Project[] = [
       'A Flutter productivity app for task tracking, reminders, and team collaboration.',
     descriptionDe:
       'Eine Flutter-Produktivitäts-App für Aufgabenverwaltung, Erinnerungen und Teamarbeit.',
-    image: 'assets/img/projects/task-management-flutter.jpg',
+    image: 'assets/img/projects/ecommerce-android.jpg',
     liveUrl: '',
     githubUrl: 'https://github.com/yourusername/task-management-flutter',
     technologies: ['Flutter', 'Dart', 'Firebase'],
@@ -51,7 +52,7 @@ const projects: Project[] = [
       'A full-stack dashboard for managing projects, teams, and deadlines with authentication and REST APIs.',
     descriptionDe:
       'Ein Full-Stack-Dashboard zur Verwaltung von Projekten, Teams und Deadlines mit Authentifizierung und REST-APIs.',
-    image: 'assets/img/projects/project-management-dashboard.jpg',
+    image: 'assets/img/projects/ecommerce-android.jpg',
     liveUrl: 'https://your-live-demo.com',
     githubUrl: 'https://github.com/yourusername/project-management-dashboard',
     technologies: ['Angular', 'NestJS', 'TypeScript', 'PostgreSQL'],
@@ -80,7 +81,7 @@ const projectsContent: Record<
 
 @Component({
   selector: 'app-projects',
-  imports: [FadeInDirective],
+  imports: [FadeInDirective, TitleCasePipe],
   templateUrl: './projects.html',
   styleUrl: './projects.scss',
 })

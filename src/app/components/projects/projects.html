@@ -1,62 +1,41 @@
 <section class="projects" appFadeIn>
   <div class="projects__inner">
-
     <div class="projects__header">
       <h2 class="projects__heading">{{ content().heading }}</h2>
       <p class="projects__subheading">{{ content().subheading }}</p>
     </div>
 
-    <div class="projects__filters">
-      <button
-        type="button"
-        class="projects__filter"
+    <div class="projects__filters" role="tablist">
+      <button type="button" class="projects__filter"
         [class.projects__filter--active]="selectedFilter() === 'all'"
-        (click)="selectedFilter.set('all')"
-      >
-        All Projects
+        (click)="selectedFilter.set('all')">
+        <span>All Projects</span>
       </button>
-
-      <button
-        type="button"
-        class="projects__filter"
+      <button type="button" class="projects__filter"
         [class.projects__filter--active]="selectedFilter() === 'android'"
-        (click)="selectedFilter.set('android')"
-      >
-        Android
+        (click)="selectedFilter.set('android')">
+        <span>Android</span>
       </button>
-
-      <button
-        type="button"
-        class="projects__filter"
+      <button type="button" class="projects__filter"
         [class.projects__filter--active]="selectedFilter() === 'flutter'"
-        (click)="selectedFilter.set('flutter')"
-      >
-        Flutter
+        (click)="selectedFilter.set('flutter')">
+        <span>Flutter</span>
       </button>
-
-      <button
-        type="button"
-        class="projects__filter"
+      <button type="button" class="projects__filter"
         [class.projects__filter--active]="selectedFilter() === 'fullstack'"
-        (click)="selectedFilter.set('fullstack')"
-      >
-        Full Stack
+        (click)="selectedFilter.set('fullstack')">
+        <span>Full Stack</span>
       </button>
     </div>
 
     <div class="projects__grid">
       @for (project of filteredProjects(); track project.title) {
-        <div class="projects__card">
+        <article class="projects__card">
 
           <div class="projects__image-wrapper">
-            <img
-              class="projects__image"
-              [src]="project.image"
-              [alt]="project.title"
-            />
-
+            <img class="projects__image" [src]="project.image" [alt]="project.title" />
             <span class="projects__badge">
-              {{ project.category }}
+              {{ project.category === 'fullstack' ? 'Full Stack' : (project.category | titlecase) }}
             </span>
           </div>
 
@@ -73,34 +52,37 @@
               }
             </div>
 
+            <div class="projects__divider"></div>
+
             <div class="projects__links">
               @if (project.liveUrl) {
-                <a
-                  class="projects__link projects__link--live"
-                  [href]="project.liveUrl"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <a class="projects__link" [href]="project.liveUrl"
+                  target="_blank" rel="noopener noreferrer">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                  </svg>
                   {{ content().live }}
                 </a>
               }
-
               @if (project.githubUrl) {
-                <a
-                  class="projects__link projects__link--code"
-                  [href]="project.githubUrl"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <a class="projects__link" [href]="project.githubUrl"
+                  target="_blank" rel="noopener noreferrer">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/>
+                    <path d="M13 6h3a2 2 0 0 1 2 2v7"/><line x1="6" x2="6" y1="9" y2="21"/>
+                  </svg>
                   {{ content().code }}
                 </a>
               }
             </div>
           </div>
 
-        </div>
+        </article>
       }
     </div>
-
   </div>
 </section>
