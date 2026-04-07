@@ -54,7 +54,9 @@
     font-size: 0.875rem;
     font-weight: 500;
     cursor: pointer;
-    transition: background-color 100ms ease, color 100ms ease;
+    transition:
+      background-color 100ms ease,
+      color 100ms ease;
 
     &:hover {
       color: #111827;
@@ -80,10 +82,11 @@
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    transition: box-shadow 100ms ease, border-color 100ms ease;
+    transition:
+      box-shadow 100ms ease,
+      border-color 100ms ease;
 
     &:hover {
-      border-color: #d1d5db;
       box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
     }
   }

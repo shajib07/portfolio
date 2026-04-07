@@ -2,13 +2,13 @@
   min-height: 100vh;
   display: flex;
   align-items: center;
-  background-color: #f9f9f9;
+  background-color: var(--color-bg-subtle);
 
   &__inner {
-    max-width: 1440px;
+    max-width: var(--inner-max-width);
     width: 100%;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: var(--inner-padding);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -23,14 +23,16 @@
   }
 
   &__greeting {
-    font-size: 1.1rem;
-    color: #666666;
+    font-size: 1rem;
+    color: var(--color-text-muted);
     margin: 0;
   }
 
   &__name {
     font-size: 3.5rem;
     font-weight: 700;
+    letter-spacing: -0.03em;
+    color: var(--color-text-primary);
     margin: 0;
     line-height: 1.1;
   }
@@ -38,14 +40,14 @@
   &__role {
     font-size: 1.5rem;
     font-weight: 400;
-    color: #444444;
+    color: var(--color-text-secondary);
     margin: 0;
   }
 
   &__description {
     font-size: 1rem;
-    color: #666666;
-    line-height: 1.6;
+    color: var(--color-text-muted);
+    line-height: 1.7;
     margin: 0;
   }
 
@@ -53,18 +55,18 @@
     display: inline-block;
     margin-top: 0.5rem;
     padding: 0.75rem 2rem;
-    background-color: #000000;
-    color: #ffffff;
+    background-color: var(--color-accent);
+    color: var(--color-bg);
     text-decoration: none;
-    border-radius: 4px;
+    border-radius: var(--radius-sm);
     font-weight: 600;
     font-size: 0.95rem;
     cursor: pointer;
-    transition: background-color 100ms ease;
+    transition: background-color var(--transition);
     align-self: flex-start;
 
     &:hover {
-      background-color: #333333;
+      background-color: var(--color-accent-hover);
     }
   }
 
@@ -74,6 +76,7 @@
     border-radius: 50%;
     overflow: hidden;
     flex-shrink: 0;
+    border: 3px solid var(--color-border);
   }
 
   &__image {
@@ -84,11 +87,18 @@
 
   @media (max-width: 768px) {
     &__inner {
-      padding: 0 1rem;
+      flex-direction: column-reverse;
+      padding-top: 6rem;
+      padding-bottom: 3rem;
+      text-align: center;
     }
 
-    &__nav {
-      display: none;
+    &__name { font-size: 2.5rem; }
+    &__cta { align-self: center; }
+
+    &__image-wrapper {
+      width: 200px;
+      height: 200px;
     }
   }
 }

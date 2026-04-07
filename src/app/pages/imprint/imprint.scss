@@ -1,19 +1,22 @@
 .legal {
   min-height: 100vh;
   padding: 4rem 0;
+  background-color: var(--color-bg);
 
   &__inner {
-    max-width: 760px;
+    max-width: 720px;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: var(--inner-padding);
     display: flex;
     flex-direction: column;
     gap: 2rem;
   }
 
   &__title {
-    font-size: 2.5rem;
+    font-size: 2.25rem;
     font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--color-text-primary);
   }
 
   &__section {
@@ -22,32 +25,29 @@
     gap: 0.75rem;
 
     h2 {
-      font-size: 1.25rem;
+      font-size: 1.125rem;
       font-weight: 600;
+      color: var(--color-text-primary);
     }
 
     p {
-      color: #555555;
-      line-height: 1.7;
+      font-size: 0.95rem;
+      color: var(--color-text-muted);
+      line-height: 1.8;
     }
   }
 
   &__back {
-    display: inline-block;
-    color: #000000;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--color-text-secondary);
     text-decoration: none;
+    font-size: 0.9rem;
     font-weight: 500;
-    transition: opacity 100ms ease;
+    transition: color var(--transition);
     cursor: pointer;
 
-    &:hover {
-      opacity: 0.6;
-    }
-  }
-
-  @media (max-width: 768px) {
-    &__inner {
-      padding: 0 1rem;
-    }
+    &:hover { color: var(--color-text-primary); }
   }
 }
