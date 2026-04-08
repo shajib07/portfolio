@@ -1,4 +1,4 @@
-<section class="hero" appFadeIn>
+<section class="hero" id="hero" appFadeIn>
   <div class="hero__inner">
 
     <div class="hero__text">
@@ -7,13 +7,13 @@
       </p>
       <h1 class="hero__name">Atahar Hossain</h1>
       <h2 class="hero__role">
-        {{ languageService.language() === 'en' ? 'Frontend Developer' : 'Frontend-Entwickler' }}
+        {{ languageService.language() === 'en' ? 'Full Stack Developer' : 'Full-Stack-Softwareentwickler' }}
       </h2>
       <p class="hero__description">
         {{
           languageService.language() === 'en'
-            ? 'I build clean, responsive and user-friendly web applications.'
-            : 'Ich entwickle saubere, responsive und benutzerfreundliche Webanwendungen.'
+            ? 'I create clean, responsive, and user-friendly experiences across web and mobile platforms.'
+            : 'Ich gestalte und entwickle moderne, responsive und benutzerfreundliche Anwendungen für Web- und Mobile-Plattformen.'
         }}
       </p>
       <a href="#contact" class="hero__cta">
@@ -24,7 +24,7 @@
     <div class="hero__image-wrapper">
       <img
         class="hero__image"
-        src="img/profile.jpg"
+        src="assets/img/profile.jpg"
         alt="Atahar Hossain"
       />
     </div>

@@ -12,6 +12,14 @@ export class HeaderComponent {
   protected languageService = inject(LanguageService);
   protected menuOpen = signal(false);
 
+  protected sectionNav = [
+    { fragment: 'about', labelEn: 'About', labelDe: 'Über mich' },
+    { fragment: 'skills', labelEn: 'Skills', labelDe: 'Skills' },
+    { fragment: 'projects', labelEn: 'Projects', labelDe: 'Projekte' },
+    { fragment: 'experience', labelEn: 'Experience', labelDe: 'Erfahrung' },
+    { fragment: 'contact', labelEn: 'Contact', labelDe: 'Kontakt' },
+  ] as const;
+
   toggleMenu(): void {
     this.menuOpen.set(!this.menuOpen());
   }

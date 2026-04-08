@@ -52,6 +52,11 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Offset for sticky header when jumping to #section anchors */
+section[id] {
+  scroll-margin-top: calc(70px + 0.75rem);
+}
+
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     Helvetica, Arial, sans-serif;

@@ -5,6 +5,16 @@
 
     <nav class="header__nav" [class.header__nav--open]="menuOpen()">
       <a routerLink="/" class="header__nav-link" (click)="closeMenu()">Home</a>
+      @for (item of sectionNav; track item.fragment) {
+        <a
+          routerLink="/"
+          [fragment]="item.fragment"
+          class="header__nav-link"
+          (click)="closeMenu()"
+        >
+          {{ languageService.language() === 'en' ? item.labelEn : item.labelDe }}
+        </a>
+      }
       <a routerLink="/imprint" class="header__nav-link" (click)="closeMenu()">Imprint</a>
       <a routerLink="/privacy" class="header__nav-link" (click)="closeMenu()">Privacy</a>
     </nav>

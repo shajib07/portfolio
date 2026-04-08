@@ -3,8 +3,7 @@ import { LanguageService } from '../../services/language';
 import { FadeInDirective } from '../../directives/fade-in';
 import { TitleCasePipe } from '@angular/common';
 
-type ProjectCategory = 'fullstack' | 'flutter' | 'android';
-
+type ProjectCategory = 'fullstack' | 'mobile';
 type ProjectFilter = 'all' | ProjectCategory;
 
 interface Project {
@@ -30,7 +29,7 @@ const projects: Project[] = [
     liveUrl: '',
     githubUrl: 'https://github.com/yourusername/ecommerce-android',
     technologies: ['Kotlin', 'MVVM', 'Room', 'Retrofit'],
-    category: 'android',
+    category: 'mobile',
     featured: true,
   },
   {
@@ -43,7 +42,7 @@ const projects: Project[] = [
     liveUrl: '',
     githubUrl: 'https://github.com/yourusername/task-management-flutter',
     technologies: ['Flutter', 'Dart', 'Firebase'],
-    category: 'flutter',
+    category: 'mobile',
     featured: true,
   },
   {
@@ -92,6 +91,12 @@ export class ProjectsComponent {
 
   content = computed(() => projectsContent[this.languageService.language()]);
   language = computed(() => this.languageService.language());
+
+  setFilter(filter: ProjectFilter): void {
+    if (this.selectedFilter() !== filter) {
+      this.selectedFilter.set(filter);
+    }
+  }
 
   filteredProjects = computed(() => {
     const selected = this.selectedFilter();
